@@ -29,6 +29,7 @@ def get_ansible_global_vars(version):
     major_version = utils.get_major_version(version)
     vars = {
         "onecloud_major_version": major_version,
+        "onecloud_version": version,
         'extra_packages': [],
     }
 
