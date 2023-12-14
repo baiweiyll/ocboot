@@ -1,7 +1,7 @@
 #!/bin/bash
 
-REGISTRY=image.changhong.com/onecloud
-VERSION=fusion.3.9.14
+REGISTRY=${REGISTRY:-registry.cn-beijing.aliyuncs.com/yunionio}
+VERSION=${VERSION:-v3.9.11}
 OCBOOT_IMAGE="$REGISTRY/ocboot:$VERSION"
 
 if ! docker ps > /dev/null 2>&1; then
@@ -15,7 +15,7 @@ if [ $# -eq 0 ]; then
 fi
 
 config_dir="$(pwd)/_config"
-run_cmd="docker run --rm -t --network host -v $HOME/.ssh/id_rsa:/root/.ssh/id_rsa -v $config_dir:/opt/ocboot/_config -v $(pwd)/VERSION:/opt/ocboot/VERSION --env OCBOOT_CONFIG_DIR=/opt/ocboot/_config --env OFFLINE_DATA_PATH=/opt/offline/"
+run_cmd="docker run --rm -t --network host -v $HOME/.ssh/id_rsa:/root/.ssh/id_rsa -v $config_dir:/opt/ocboot/_config -v $(pwd)/VERSION:/opt/ocboot/VERSION --env OCBOOT_CONFIG_DIR=/opt/ocboot/_config"
 mkdir -p "$config_dir"
 
 if [ $# -eq 1 ]; then
