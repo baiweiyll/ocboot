@@ -3,6 +3,7 @@
   template: src=yunion.repo.j2 dest=/etc/yum.repos.d/yunion.repo
   when:
   - is_centos_based is defined
+  - is_kylin_based  is defined
 
 - name: ensure dest exists
   file: path=/opt/yunion/upgrade state=directory mode=0755
@@ -26,3 +27,4 @@
     yum -y --disablerepo='*' --enablerepo='yunion-repo-offline' makecache
   when:
   - is_centos_based is defined
+  - is_kylin_based  is defined
