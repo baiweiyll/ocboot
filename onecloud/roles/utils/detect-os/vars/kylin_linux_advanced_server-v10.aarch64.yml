@@ -65,6 +65,7 @@ common_packages:
   - usbredir
   - usbutils
   - wget
+  - python3-pip
   - "{{ yunion_qemu_package }}"
 
 common_services:
