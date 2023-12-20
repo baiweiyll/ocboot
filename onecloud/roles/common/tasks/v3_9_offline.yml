@@ -2,8 +2,6 @@
 - name: Add cloud rpm repository {{ online_status }} {{ ansible_architecture }}
   template: src=yunion.repo.j2 dest=/etc/yum.repos.d/yunion.repo
   when:
-  - is_centos_based is defined
-  - is_kylin_based  is defined
   - is_centos_based | bool
   - is_kylin_based | bool
 
@@ -28,7 +26,5 @@
     yum clean all
     yum -y --disablerepo='*' --enablerepo='yunion-repo-offline' makecache
   when:
-  - is_centos_based is defined
-  - is_kylin_based  is defined
   - is_centos_based | bool
   - is_kylin_based | bool
