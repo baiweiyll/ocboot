@@ -4,6 +4,8 @@
   when:
   - is_centos_based is defined
   - is_kylin_based  is defined
+  - is_centos_based | bool
+  - is_kylin_based | bool
 
 - name: ensure dest exists
   file: path=/opt/yunion/upgrade state=directory mode=0755
@@ -28,3 +30,5 @@
   when:
   - is_centos_based is defined
   - is_kylin_based  is defined
+  - is_centos_based | bool
+  - is_kylin_based | bool
