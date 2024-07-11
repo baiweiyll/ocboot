@@ -10,9 +10,8 @@ update-pciids:
 
 .PHONY: test
 
-REGISTRY ?= "registry.cn-beijing.aliyuncs.com/yunionio"
-VERSION ?= $(shell git describe --exact-match 2> /dev/null || \
-                git describe --match=$(git rev-parse --short=8 HEAD) --always --dirty --abbrev=8)
+REGISTRY ?= "image.changhong.com/onecloud"
+VERSION ?= "v3.9.14-fusion.7"
 
 image:
 	docker buildx build --platform linux/arm64,linux/amd64 --push \

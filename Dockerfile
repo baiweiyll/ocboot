@@ -1,4 +1,4 @@
-FROM registry.cn-beijing.aliyuncs.com/yunionio/ansibleserver-base:v1.1.1
+FROM image.changhong.com/onecloud/ansibleserver-base:v1.1.1
 RUN apk add --no-cache openssh openssl curl rsync pv mariadb-client
 RUN apk add --no-cache --virtual .build-dependencies \
     libffi-dev openssl-dev python3-dev build-base py-setuptools rust cargo mariadb-dev && \
