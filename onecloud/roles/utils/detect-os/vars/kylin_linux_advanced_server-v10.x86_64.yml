@@ -5,6 +5,8 @@ is_kylin_x86: true
 is_kylin_based: true
 
 common_packages:
+  - ntp
+  - ntpdate
   - bash-completion
   - boost-iostreams
   - boost-random
