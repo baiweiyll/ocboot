@@ -1,7 +1,7 @@
 #!/bin/bash
 
 REGISTRY=image.changhong.com/onecloud
-VERSION=fusion.3.9.14
+VERSION=fusion.3.9.14.8
 OCBOOT_IMAGE="$REGISTRY/ocboot:$VERSION"
 
 if ! docker ps > /dev/null 2>&1; then
